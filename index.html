@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no"/>        
+
+        <link rel="stylesheet" href="https://js.arcgis.com/3.29/esri/css/esri.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.5.5/bluebird.core.min.js"></script>
+        <script src="https://js.arcgis.com/3.29/"></script>
+        
+        <script src="./ArcGIS_v3_29.js"></script>
+        <script src="./loader.js"></script>
+
+        <style>
+            .suggest>input{
+                width: 300px;
+                padding: 10px;
+                margin: 10px 0;
+            }
+            .suggestions{
+                position: absolute;
+                display: none;
+                background: white;
+                border: 1px solid silver;
+                padding: 5px 0px;
+                margin-top: -11px;
+            }
+            .suggestion{
+                padding: 5px 10px;
+                cursor: pointer;
+            }
+            .suggestion:hover{
+                background-color:aliceblue;
+            }
+            .show{
+                display: block !important;
+            }
+            .hide{
+                display: none !important;
+            }
+        </style>
+    </head>
+    <body onload="onLoad()">
+        <div id="webmap"></div>
+        <div id="suggest" class="suggest">
+            <input type="text">
+            <div class="suggestions"></div>
+        </div>
+        
+        <div><input type="checkbox" id="floodZoneLayer">Flood Zone Layer</div>
+        <div><input type="checkbox" id="seismicLayer">Seismic Layer</div>
+
+        <div id="selected"></div>
+    </body>
+</html>
